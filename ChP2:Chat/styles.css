@@ -11,7 +11,7 @@
     border: 1px;
   }
 
-.wrapper div div{
+.wrapper > div > div{
   text-align: center;
   border: solid 1px;
   border-color: black;
@@ -24,6 +24,25 @@
 
 .chat_content_messages {
   min-height: 20dvw;
+  padding-top: 5px;
+}
+
+.chat_content_messages div {
+  display: block;
+  position: relative;
+}
+
+.chat_content_messages > div > p{
+  width: fit-content;
+  margin: 0 10px;
+}
+
+.my_msg > p{
+  margin-left: auto !important;
+}
+
+.their_msg > p {
+  margin-right: auto !important;
 }
 
 .chat_content, .chat_content_panel {
@@ -33,7 +52,6 @@
 
 .chat_content_panel_table {
   vertical-align: middle;
-  border: solid blueviolet 1px;
   width: 100%;
 }
 
@@ -42,9 +60,10 @@
 }
 
 .message {
-  resize:none;
+  resize: none;
   display: inline-block;
   width: 100%;
+  padding: 2px 5px;
 }
 
 .submit {
@@ -53,3 +72,23 @@
 /* body {
   background-color: blue;
 } */
+
+.chat_user {
+  height: 50px;
+  border: solid red 5 px;
+  height: 63px;
+  box-sizing: border-box;
+  padding: 0 0 0 15px;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+.lable {
+  height: 15px;
+  margin: 0 0 0 5px;
+
+}
+.name_dialog {
+  height: 50px;
+  border: solid red 5 px;
+}

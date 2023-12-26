@@ -9,4 +9,8 @@ app.get('/', (request, response) =>
 
 app.use(express.static(__dirname + ''));
 
-io.sockets.on('connection', client => console.log('Кто-то присоединился'));
+io.sockets.on('connection', client => {
+    console.log('Кто-то присоединился')
+    client.emit('public_chat_info', 'Ты первый!')
+});
+
