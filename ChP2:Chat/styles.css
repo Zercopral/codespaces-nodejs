@@ -55,8 +55,8 @@
   width: 100%;
 }
 
-.chat_content_panel_table td th{
-  width: 50%;
+.chat_content_panel_table tr:first-child{
+  text-align: left;
 }
 
 .message {
@@ -73,22 +73,43 @@
   background-color: blue;
 } */
 
-.chat_user {
-  height: 50px;
-  border: solid red 5 px;
-  height: 63px;
-  box-sizing: border-box;
-  padding: 0 0 0 15px;
+.circle1 {
   display: block;
-  width: 100%;
-  cursor: pointer;
+  background: red;
+  clip-path: circle(50%);
+  height: 1em;
+  width: 1em;
+  padding: 2px 2px;
+  display: inline-block;
 }
-.lable {
-  height: 15px;
-  margin: 0 0 0 5px;
 
+.circle2 {
+  display: block;
+  background: blue;
+  clip-path: circle(50%);
+  height: 1em;
+  width: 1em;
+  padding: 2px 2px;
+  display: inline-block;
 }
-.name_dialog {
-  height: 50px;
-  border: solid red 5 px;
+
+.circle3 {
+  display: block;
+  background: yellow;
+  clip-path: circle(50%);
+  height: 1em;
+  width: 1em;
+  padding: 2px 2px;
+  display: inline-block;
 }
+
+.circle4 {
+  display: block;
+  background: purple;
+  clip-path: circle(50%);
+  height: 1em;
+  width: 1em;
+  padding: 2px 2px;
+  display: inline-block;
+}
+

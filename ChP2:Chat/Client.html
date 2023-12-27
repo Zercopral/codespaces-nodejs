@@ -9,11 +9,11 @@
 
 <body>
     <div class="wrapper">
-        <div class="chats_list_block">
-            <div class="chats_list_header">Списки чатов</div>
-            <div class="chats_list_content">
-                <ul class="chats_list">
-                    <p>Чатов пока нет. Начните общаться, выбрав собеседника из списка пользователей.</p>
+        <div class="users_list_block">
+            <div class="users_list_header">Список пользователей</div>
+            <div class="users_list_content">
+                <ul class="users_list">
+                    <li><p>пользователей пока нет</p></li>
                 </ul>
             </div>
 
@@ -25,38 +25,71 @@
                 <div class="chat_content_messages">
 
                     <template id="my_msg">
-                        <div class="my_msg"></div>
+                        <div class="my_msg">
+                            <p class="body_msg">
+                                <span class="name_user"></span>:
+                                <span class="text_msg"></span>
+                            </p>
+                        </div>
                     </template>
 
-                    <template id="their_msg">
-                        <div class="their_msg"></div>
+                    <template id="public_msg">
+                        <div class="public_msg">
+                            <p class="body_msg">
+                                <span class="name_user"></span>:
+                                <span class="text_msg"></span>
+                            </p>
+                        </div>
+                    </template>
+
+                    <template id="private_msg">
+                        <div class="private_msg">
+                            <p>личное сообщение от <span class="name_user"></span></p>
+                            <p class="body_msg">
+                                <span class="text_msg"></span>
+                            </p>
+                        </div>
+                    </template>
+
+                    <template id="my_private_msg">
+                        <div class="my_private_msg">
+                            <p>личное сообщение для <span class="name_user"></span></p>
+                            <p class="body_msg">
+                                <span class="text_msg"></span>
+                            </p>
+                        </div>
                     </template>
                     
                 </div>
                 <div class="chat_content_panel">
-                    <table class="chat_content_panel_table"><td>
-                        <th>
-                            <textarea class="message" name="message" placeholder="Введите Ваше сообщение" autofocus></textarea>
-                        </th>
-                        <th>
-                            <input class="submit" type="submit" value="Отправить">
-                        </th>
-                    </td></table>
+                    <table class="chat_content_panel_table">
+                        <tr colspan="2">
+                            <td>
+                                <label for="for_user_list">Отправить сообщение:</label>
+                                <select id="for_user_list" name="for_user_list">
+                                    <!-- <option value="apple"></option> -->
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <textarea class="message" name="message" placeholder="Введите Ваше сообщение" autofocus></textarea>
+                            </td>
+                            <td>
+                                <input class="submit" type="submit" value="Отправить">
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
         <div class="users_list_block">
-            <div class="users_list_header">Пользователи</div>
-            <div class="users_list_content">
-                <ul class="users_list">
-                    <li class="chat_user">
-                    <div class="name_dialog">
-                        <span class="lable" role="link" aria-label="чат со мной">чат со мной</span>
-                        <div class="text_chat">fhfghdfghgghdhc</div>
-                    </div>
-                    </li>
-
-                </ul>
+            <div class="color_list">Цвет сообщений</div>
+            <div class="color">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
             </div>
         </div>
     </div>
