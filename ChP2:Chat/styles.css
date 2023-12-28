@@ -19,17 +19,25 @@
 }
 
 .chat {
-  height:60dvw;
+  height: 50dvw;
+}
+
+.chat_content {
+  height: 95%;
+  padding: 5px;
 }
 
 .chat_content_messages {
   min-height: 20dvw;
+  height: 93.5%;
   padding-top: 5px;
+  overflow-y: auto;
 }
 
-.chat_content_messages div {
+.chat_content_messages > div {
   display: block;
   position: relative;
+  margin-top: 5px;
 }
 
 .chat_content_messages > div > p{
@@ -37,7 +45,7 @@
   margin: 0 10px;
 }
 
-.my_msg > p{
+.my_msg > p, .my_private_msg > p{
   margin-left: auto !important;
 }
 
@@ -69,47 +77,12 @@
 .submit {
   display: inline-block;
 }
-/* body {
-  background-color: blue;
-} */
 
 .circle1 {
   display: block;
-  background: red;
   clip-path: circle(50%);
   height: 1em;
   width: 1em;
   padding: 2px 2px;
   display: inline-block;
 }
-
-.circle2 {
-  display: block;
-  background: blue;
-  clip-path: circle(50%);
-  height: 1em;
-  width: 1em;
-  padding: 2px 2px;
-  display: inline-block;
-}
-
-.circle3 {
-  display: block;
-  background: yellow;
-  clip-path: circle(50%);
-  height: 1em;
-  width: 1em;
-  padding: 2px 2px;
-  display: inline-block;
-}
-
-.circle4 {
-  display: block;
-  background: purple;
-  clip-path: circle(50%);
-  height: 1em;
-  width: 1em;
-  padding: 2px 2px;
-  display: inline-block;
-}
-

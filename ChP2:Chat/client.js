@@ -17,6 +17,7 @@ class Client {
 
         // События списка пользователей
         this.socket.on('addUser', data => this.addUser(data))
+        this.socket.on('addOnlineUsers', data => this.addUsers(data))
         this.socket.on('deleteUser', data => this.deleteUser(data))
 
         // Добавляем себя в список пользователей
@@ -24,139 +25,205 @@ class Client {
 
     }
 
+    // Функция инициализации клиента на сервере
     initClientonServer(){
         this.socket.emit('new_client', {'name': this.name, 'color': this.color})
     }
 
+    // Функция отправки сообщения
     sendMsg(msg, private_type = false, user = null){
         if (msg){ // Если сообщение существует
 
-            if (private_type) {  // Если сообщение личное другому пользователю
+            if (private_type) { 
+                // Если сообщение личное другому пользователю
 
+                // Отправляем сообщение и сопутствующую информацию на сервер
                 this.socket.emit('msg_private', {'msg':msg, 'from_user': this.name, 'for_user': user})
-                // CreateMsg('my_private')
-            } else { // Если сообщение публичное (всем юзерам)
+                
+                // Отрисовываем сообщение в чате
+                CreateMsg('my_private_msg', msg, this.color, this.getUserNameById())
 
+            } else {
+                // Если сообщение публичное (всем пользователем)
+
+                // Отправляем сообщение и сопутствующую информацию на сервер
                 this.socket.emit('msg_public', {'msg':msg, 'from_user': this.name})
-                CreateMsg('my', msg, this.color, this.name)
+
+                // Отрисовываем сообщение в чате
+                CreateMsg('my_msg', msg, this.color, this.name)
             }
         } 
     }
 
+    // Функции обработки получения сообщений
     receivePublicMsg(data) {
-        CreateMsg('public', data.msg, data.color, data.from_user)
+        CreateMsg('public_msg', data.msg, data.color, data.from_user)
     }
 
     receivePrivateMsg(data) {
-        CreateMsg('user', data.msg, data.color, data.from_user)
+        CreateMsg('private_msg', data.msg, data.color, data.from_user)
     }
 
     receiveSystemMsg(data) {
         CreateMsg('system', data.msg, data.color)
     }
 
-    // События списка пользователей
+    // Функции списка пользователей
+    
+    // Функция добавления одного пользователя в список пользователей
     addUser(data){
 
-        console.log('Добавляю в список нового пользователя' + data.name)
+        // Добавлем пользователя в левый список
 
-        let chats_list = document.querySelector('.users_list')
-
-        let li_p = chats_list.querySelector('li > p')
+        let users_list = document.querySelector('.users_list')
+        let li_p = users_list.querySelector('li > p')
 
         if (li_p) {
             li_p.parentNode.remove()
         }
 
         let li = document.createElement('li')
-
         li.id = data.id
         li.textContent = data.name
 
-        chats_list.append(li)
+        users_list.append(li)
 
-
-    }
-
-    deleteUser(data){
         
-        console.log('Удаляю пользователя ' + data.id + ' из списка')
+        // Добавлем пользователя в выпадающий список
 
-        let chats_list = document.querySelector('.users_list')
+        let for_user_list = document.querySelector('#for_user_list')
+        let list_option = document.createElement('option')
 
-        chats_list.querySelector('#'+data.id).remove()
+        if (data.id != 'current_user') {
+            // Если добавлем в список другого пользователя
+
+            list_option.value = data.id
+            list_option.innerHTML = data.name
+
+        } else {
+            // Если добавлем в список текущего пользователя
+            // Добавлем вариант отправки сообщения всем
+
+            list_option.value = 'all'
+            list_option.innerHTML = 'Всем'
+            list_option.selected
+
+        }
+
+        for_user_list.append(list_option)
+
     }
+
+    // Функция добавления списка пользователей в список пользователей
+    addUsers(data) { data.forEach((user) => { this.addUser(user) }) }
+
+    // Функция удаления пользователя из списков
+    deleteUser(data){
+
+        // Удаляем пользователя из списка пользователей
+        document.querySelector('.users_list').querySelector('#'+data.id).remove()
+
+        // Удаляем пользователя из выпадающего списка пользователей
+        document.querySelector('#for_user_list').querySelector('option[value="'+ data.id +'"]').remove()
+    }
+
+    // Функция получения id пользователя
+    getUserNameById(){ return document.getElementById(selected_user).innerHTML }
+
 }
 
+// Чтобы js не ругался
 let client
 
 window.onunload = () => socket.disconnect()
 
+// При загрузке страницы
 window.addEventListener('load', (event) => {
+    // Спрашиваем имя и люимый цвет клиента
     let name = prompt('Как тебя зовут?', 'Гость')
-    let color = prompt(name + 'какой цвет тебе нравится?', '#000000')
+    let color = prompt(name + ', какой цвет тебе нравится?', '#000000')
 
+    // Создаем новый объект класса
     client = new Client(socket, name, color)
+
+    // Помечаем цвет сообщений клиента
+    document.querySelector('.circle1').style.backgroundColor = color
 })
 
+// Добавление функционала выбора пользователя из выпадающего списка
+let for_user_list = document.querySelector('select')
+let selected_user = 'all'
+for_user_list.addEventListener('change', () => { selected_user = for_user_list.value });
+
+// Функция обработки отправления сообщения
 function SendMsg() {
+    
+    // Выбираем поле ввода текста
     const msg = document.querySelector(".message")
+
+    // Получаем текст сообщения
     const text = msg.value
+
+    // Очищаем поле ввода текста
     msg.value = ''
-    // CreateMsg(text, 1)
-    client.sendMsg(text)
+    
+    // Если в выпадающем списке выбран вариант "Всем"
+    if (selected_user == 'all'){
+        client.sendMsg(text)
+    }
+    // Если в выпадающем списке выбран вариант конкретный ползователь
+    else {
+        client.sendMsg(text, true, selected_user)
+    }
+        
 }
 
+// Добавление функционала отправки сообщения по кнопке "Отправить"
 const sbm_btn = document.querySelector(".submit")
 sbm_btn.addEventListener("click", SendMsg)
 
+// Добавление функционала отправки сообщения по нажатию на "Enter"
 const msg = document.querySelector(".message")
-msg.addEventListener('keyup', function(event) {
-    if (event.code == 'Enter') {
-        SendMsg()
-    }
-  });
+msg.addEventListener('keyup', function(event) {if (event.code == 'Enter') { SendMsg() }});
 
+// Функция отрисовки сообщения в чате
 function CreateMsg(type = 'my', msg, color, user = null){
     
-    console.log(type)
-
     if (type != 'system') {
 
-        let msg_html
+        // Находим шаблон сообщения
+        let msg_html = document.getElementById(type)
 
-        if (type == 'my') { // Я = хозяин сообщения
-            msg_html = document.getElementById('my_msg')
-
-        } else if (type == 'public'){ // Публичное сообщение
-            msg_html = document.getElementById('public_msg')
-
-        } else if (type == 'private') { // Приватное сообщение
-            msg_html = document.getElementById('private_msg')
-        } else { // Приватное сообщение от меня
-            msg_html = document.getElementById('my_private_msg')
-        }
-
-
+        // Импортируем шаблон в файл
         const template = document.importNode(msg_html.content, true)
 
+        // Вписываем наше имя или имя другого пользователя
         template.querySelector('.name_user').textContent = user
 
+        // Указываем текст сообщения и его цвет
         template.querySelector('.text_msg').textContent = msg
         template.querySelector('.text_msg').style.color = color
 
+        // Выбираем тег содержимого чата
         const chat_content_messages = document.querySelector('.chat_content_messages')
 
+        // Добавляем сообщение в содержимое чата
         chat_content_messages.append(template)
 
     } else {
+        // Если сообщение системное
+
+        // Создаем тег абзаца
         const p_html = document.createElement('p')
+
+        // Вписываем текст сообщения и его цвет
         p_html.innerHTML = msg
         p_html.style.color = color
 
+        // Выбираем тег содержимого чата
         const chat_content_messages = document.querySelector('.chat_content_messages')
 
+        // Добавляем сообщение в содержимое чата
         chat_content_messages.append(p_html)
-        console.log(msg)
     }
 }
