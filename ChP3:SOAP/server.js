@@ -51,7 +51,7 @@ class SOAP_Client{
         let result_GetCursOnDate = await client.GetCursOnDateXMLAsync({On_date:this.currentDate()})
         result_GetCursOnDate = result_GetCursOnDate[0].GetCursOnDateXMLResult.ValuteData.ValuteCursOnDate
 
-        // Vname, Vcode
+        // Vname, Vcode, Vcurs
         // {"code": "R01010", "name": "Австралийский доллар", "value": 16.0102}
 
         let output_json = []
@@ -75,46 +75,7 @@ class SOAP_Client{
         });
 
         return JSON.stringify(output_json)
-        // soap.createClient(wsdl, (err, client) => {
-
-        //     if(err) console.log("У нас проблемы: ", err)
-         
-        //     soap_client = new SOAP_Client(client)
-        
-        // })
-
-        // this.soap_client_cns.EnumValutesXML({Seld:Seld}, (err, result) => {
-        //     if (err) { console.log("У нас проблемы: ", err)}
-
-        //     else {
-        //         let fnc_result = result.EnumValutesXMLResult.ValuteData.EnumValutes
-        //         console.log(fnc_result)
-        //         return fnc_result
-        //     }
-        // })
-
-        // return this.soap_client_cns.EnumValutesXML({Seld:Seld})
     }
-    
-    // async clientGetCursOnDateXML(On_date){    
-    //     const result = await this.soap_client_cns.GetCursOnDateXMLAsync({On_date:On_date})
-            
-    //     //     , (err, result) => {
-    //     //     if (err) { 
-                
-    //     //         console.log("У нас проблемы: ", err)
-    //     //     }
-    //     //     else {
-
-                
-
-    //     // }})
-
-    //     fnc_result = result[0].GetCursOnDateXMLResult.ValuteData.ValuteCursOnDate
-    //     // console.log(fnc_result)
-    //     return fnc_result
-
-    // }
 
     async getValute(ValutaCode, FromDate, ToDate){
 
@@ -151,69 +112,10 @@ class SOAP_Client{
 
         return JSON.stringify(output_json)
 
-        // this.soap_client_cns.GetCursDynamicXML({FromDate:FromDate,ToDate:ToDate,ValutaCode:ValutaCode}
-        //     , (err,result) => {
-    
-        //     if (err) { 
-
-        //         console.log("У нас проблемы: ", err)
-        //     }
-        //     else if (result.GetCursDynamicXMLResult.ValuteData == null){
-
-        //         console.log("Таких данных нет: ")
-        //     }
-        //     else{
-
-        //         fnc_result = result.GetCursDynamicXMLResult.ValuteData
-        //         console.log(fnc_result)
-        //         return fnc_result
-
-        //     }
-        // })
-
     }          
 }
 
 const soap_client = new SOAP_Client(soap, wsdl)
-
-// async function createSOAPClient(soap, wsdl){
-//     return await soap.createClientAsync(wsdl, {connection: 'keep-alive'}).then()
-// }
-
-// console.log(SOAP_Client.currentDate())
-
-// createSOAPClient(soap, wsdl).then((client) => 
-// {
-//     console.log(client)
-
-//     const soap_client = new SOAP_Client(client)
-
-//     // console.log(soap_client.soap_client_cns)
-
-//     return client
-// }
-// ).then()
-
-// console.log(client)
-
-// console.log(client)
-
-// const soap_client = new SOAP_Client(client)
-
-// console.log(soap_client.soap_client_cns)
-
-// // let soap_client
-// soap.createClient(wsdl, (err, client) => {
-
-//     if(err) console.log("У нас проблемы: ", err)
- 
-//     soap_client = new SOAP_Client(client)
-
-//     })
-
-
-// console.log(soap_client.clientGetCursOnDateXML("2023-12-29"))
-// console.log(soap_client.clientGetCursDynamicXML("R01820","2023-12-28", "2023-12-29"))
 
 // Описание веб-службы
 const myService = {
