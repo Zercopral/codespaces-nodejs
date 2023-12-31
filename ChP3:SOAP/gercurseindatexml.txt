@@ -1,0 +1,346 @@
+[
+  {
+    Vname: 'Австралийский доллар',
+    Vnom: '1',
+    Vcurs: '62.6988',
+    Vcode: '36',
+    VchCode: 'AUD',
+    VunitRate: '62.6988'
+  },
+  {
+    Vname: 'Азербайджанский манат',
+    Vnom: '1',
+    Vcurs: '53.9442',
+    Vcode: '944',
+    VchCode: 'AZN',
+    VunitRate: '53.9442'
+  },
+  {
+    Vname: 'Фунт стерлингов Соединенного королевства',
+    Vnom: '1',
+    Vcurs: '116.0620',
+    Vcode: '826',
+    VchCode: 'GBP',
+    VunitRate: '116.062'
+  },
+  {
+    Vname: 'Армянский драм',
+    Vnom: '100',
+    Vcurs: '22.6332',
+    Vcode: '51',
+    VchCode: 'AMD',
+    VunitRate: '0.226332'
+  },
+  {
+    Vname: 'Белорусский рубль',
+    Vnom: '1',
+    Vcurs: '28.7000',
+    Vcode: '933',
+    VchCode: 'BYN',
+    VunitRate: '28.7'
+  },
+  {
+    Vname: 'Болгарский лев',
+    Vnom: '1',
+    Vcurs: '51.6852',
+    Vcode: '975',
+    VchCode: 'BGN',
+    VunitRate: '51.6852'
+  },
+  {
+    Vname: 'Бразильский реал',
+    Vnom: '1',
+    Vcurs: '18.9610',
+    Vcode: '986',
+    VchCode: 'BRL',
+    VunitRate: '18.961'
+  },
+  {
+    Vname: 'Венгерский форинт',
+    Vnom: '100',
+    Vcurs: '26.5489',
+    Vcode: '348',
+    VchCode: 'HUF',
+    VunitRate: '0.265489'
+  },
+  {
+    Vname: 'Вьетнамский донг',
+    Vnom: '10000',
+    Vcurs: '38.3944',
+    Vcode: '704',
+    VchCode: 'VND',
+    VunitRate: '0.00383944'
+  },
+  {
+    Vname: 'Гонконгский доллар',
+    Vnom: '1',
+    Vcurs: '11.7646',
+    Vcode: '344',
+    VchCode: 'HKD',
+    VunitRate: '11.7646'
+  },
+  {
+    Vname: 'Грузинский лари',
+    Vnom: '1',
+    Vcurs: '34.0810',
+    Vcode: '981',
+    VchCode: 'GEL',
+    VunitRate: '34.081'
+  },
+  {
+    Vname: 'Датская крона',
+    Vnom: '1',
+    Vcurs: '13.5578',
+    Vcode: '208',
+    VchCode: 'DKK',
+    VunitRate: '13.5578'
+  },
+  {
+    Vname: 'Дирхам ОАЭ',
+    Vnom: '1',
+    Vcurs: '24.9708',
+    Vcode: '784',
+    VchCode: 'AED',
+    VunitRate: '24.9708'
+  },
+  {
+    Vname: 'Доллар США',
+    Vnom: '1',
+    Vcurs: '91.7051',
+    Vcode: '840',
+    VchCode: 'USD',
+    VunitRate: '91.7051'
+  },
+  {
+    Vname: 'Евро',
+    Vnom: '1',
+    Vcurs: '101.3451',
+    Vcode: '978',
+    VchCode: 'EUR',
+    VunitRate: '101.3451'
+  },
+  {
+    Vname: 'Египетский фунт',
+    Vnom: '10',
+    Vcurs: '29.6846',
+    Vcode: '818',
+    VchCode: 'EGP',
+    VunitRate: '2.96846'
+  },
+  {
+    Vname: 'Индийская рупия',
+    Vnom: '10',
+    Vcurs: '11.0286',
+    Vcode: '356',
+    VchCode: 'INR',
+    VunitRate: '1.10286'
+  },
+  {
+    Vname: 'Индонезийская рупия',
+    Vnom: '10000',
+    Vcurs: '59.2066',
+    Vcode: '360',
+    VchCode: 'IDR',
+    VunitRate: '0.00592066'
+  },
+  {
+    Vname: 'Казахстанский тенге',
+    Vnom: '100',
+    Vcurs: '20.1011',
+    Vcode: '398',
+    VchCode: 'KZT',
+    VunitRate: '0.201011'
+  },
+  {
+    Vname: 'Канадский доллар',
+    Vnom: '1',
+    Vcurs: '69.1696',
+    Vcode: '124',
+    VchCode: 'CAD',
+    VunitRate: '69.1696'
+  },
+  {
+    Vname: 'Катарский риал',
+    Vnom: '1',
+    Vcurs: '25.1937',
+    Vcode: '634',
+    VchCode: 'QAR',
+    VunitRate: '25.1937'
+  },
+  {
+    Vname: 'Киргизский сом',
+    Vnom: '10',
+    Vcurs: '10.3006',
+    Vcode: '417',
+    VchCode: 'KGS',
+    VunitRate: '1.03006'
+  },
+  {
+    Vname: 'Китайский юань',
+    Vnom: '1',
+    Vcurs: '12.8011',
+    Vcode: '156',
+    VchCode: 'CNY',
+    VunitRate: '12.8011'
+  },
+  {
+    Vname: 'Молдавский лей',
+    Vnom: '10',
+    Vcurs: '52.2596',
+    Vcode: '498',
+    VchCode: 'MDL',
+    VunitRate: '5.22596'
+  },
+  {
+    Vname: 'Новозеландский доллар',
+    Vnom: '1',
+    Vcurs: '57.9943',
+    Vcode: '554',
+    VchCode: 'NZD',
+    VunitRate: '57.9943'
+  },
+  {
+    Vname: 'Норвежская крона',
+    Vnom: '10',
+    Vcurs: '89.6915',
+    Vcode: '578',
+    VchCode: 'NOK',
+    VunitRate: '8.96915'
+  },
+  {
+    Vname: 'Польский злотый',
+    Vnom: '1',
+    Vcurs: '23.4073',
+    Vcode: '985',
+    VchCode: 'PLN',
+    VunitRate: '23.4073'
+  },
+  {
+    Vname: 'Румынский лей',
+    Vnom: '1',
+    Vcurs: '20.3921',
+    Vcode: '946',
+    VchCode: 'RON',
+    VunitRate: '20.3921'
+  },
+  {
+    Vname: 'СДР (специальные права заимствования)',
+    Vnom: '1',
+    Vcurs: '123.0380',
+    Vcode: '960',
+    VchCode: 'XDR',
+    VunitRate: '123.038'
+  },
+  {
+    Vname: 'Сингапурский доллар',
+    Vnom: '1',
+    Vcurs: '69.2951',
+    Vcode: '702',
+    VchCode: 'SGD',
+    VunitRate: '69.2951'
+  },
+  {
+    Vname: 'Таджикский сомони',
+    Vnom: '10',
+    Vcurs: '83.6664',
+    Vcode: '972',
+    VchCode: 'TJS',
+    VunitRate: '8.36664'
+  },
+  {
+    Vname: 'Таиландский бат',
+    Vnom: '10',
+    Vcurs: '26.5957',
+    Vcode: '764',
+    VchCode: 'THB',
+    VunitRate: '2.65957'
+  },
+  {
+    Vname: 'Турецкая лира',
+    Vnom: '10',
+    Vcurs: '31.3082',
+    Vcode: '949',
+    VchCode: 'TRY',
+    VunitRate: '3.13082'
+  },
+  {
+    Vname: 'Новый туркменский манат',
+    Vnom: '1',
+    Vcurs: '26.2015',
+    Vcode: '934',
+    VchCode: 'TMT',
+    VunitRate: '26.2015'
+  },
+  {
+    Vname: 'Узбекский сум',
+    Vnom: '10000',
+    Vcurs: '74.2261',
+    Vcode: '860',
+    VchCode: 'UZS',
+    VunitRate: '0.00742261'
+  },
+  {
+    Vname: 'Украинская гривна',
+    Vnom: '10',
+    Vcurs: '24.5408',
+    Vcode: '980',
+    VchCode: 'UAH',
+    VunitRate: '2.45408'
+  },
+  {
+    Vname: 'Чешская крона',
+    Vnom: '10',
+    Vcurs: '41.1086',
+    Vcode: '203',
+    VchCode: 'CZK',
+    VunitRate: '4.11086'
+  },
+  {
+    Vname: 'Шведская крона',
+    Vnom: '10',
+    Vcurs: '91.4345',
+    Vcode: '752',
+    VchCode: 'SEK',
+    VunitRate: '9.14345'
+  },
+  {
+    Vname: 'Швейцарский франк',
+    Vnom: '1',
+    Vcurs: '107.6477',
+    Vcode: '756',
+    VchCode: 'CHF',
+    VunitRate: '107.6477'
+  },
+  {
+    Vname: 'Сербский динар',
+    Vnom: '100',
+    Vcurs: '86.4539',
+    Vcode: '941',
+    VchCode: 'RSD',
+    VunitRate: '0.864539'
+  },
+  {
+    Vname: 'Южноафриканский рэнд',
+    Vnom: '10',
+    Vcurs: '49.5934',
+    Vcode: '710',
+    VchCode: 'ZAR',
+    VunitRate: '4.95934'
+  },
+  {
+    Vname: 'Вон Республики Корея',
+    Vnom: '1000',
+    Vcurs: '70.8585',
+    Vcode: '410',
+    VchCode: 'KRW',
+    VunitRate: '0.0708585'
+  },
+  {
+    Vname: 'Японская иена',
+    Vnom: '100',
+    Vcurs: '64.2868',
+    Vcode: '392',
+    VchCode: 'JPY',
+    VunitRate: '0.642868'
+  }
+]

@@ -1,0 +1,65 @@
+<definitions name = "ProxyServer"
+            targetNamespace = "http://ithub.ru/primer/MyService.wsdl"
+            xmlns = "http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap = "http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns = "http://ithub.ru/primer/MyService.wsdl"
+	xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
+	<message name="getValutesResponse">
+		<part name="Valutes" type="xsd:string"/>
+	</message>
+	<message name="getValuteRequest">
+		<part name="ValutaCode" type="xsd:string"/>
+		<part name="FromDate" type="xsd:date"/>
+		<part name="ToDate" type="xsd:date"/>
+	</message>
+	<message name="getValuteResponse">
+		<part name="Valute" type="xsd:string"/>
+	</message>
+	<portType name="MyPortType">
+		<operation name="getValutes">
+			<output message="tns:getValutesResponse"/>
+		</operation>
+		<operation name="getValute">
+			<input message="tns:getValuteRequest"/>
+			<output message="tns:getValuteResponse"/>
+		</operation>
+	</portType>
+	<binding name = "MyFunctionBinding" type="tns:MyPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getValutes"/>
+		<operation name="getValute"/>
+	</binding>
+	<service name="ProxyServer">
+		<port binding="MyFunctionBinding" name="MyPort">
+			<soap:address location = "https://vigilant-journey-gpp6656wpvq29v5q-8000.app.github.dev/" />
+		</port>
+	</service>
+</definitions>
+
+
+<definitions name = "ProxyServer"
+            xmlns = "http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap = "http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns = "https://vigilant-journey-gpp6656wpvq29v5q-8000.app.github.dev/proxy_server.wsdl"
+	xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
+	<message name="getValutesResponse">
+		<part name="Valutes" type="xsd:string"/>
+	</message>
+	
+	<portType name="MyPortType">
+		<operation name="getValutes">
+			<output message="tns:getValutesResponse"/>
+		</operation>
+		
+	</portType>
+	<binding name = "MyFunctionBinding" type="tns:MyPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+		<operation name="getValutes"/>
+	</binding>
+	<service name="ProxyServer">
+		<port binding="MyFunctionBinding" name="MyPort">
+			<soap:address location = "https://vigilant-journey-gpp6656wpvq29v5q-8000.app.github.dev/" />
+		</port>
+	</service>
+</definitions>
